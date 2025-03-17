@@ -319,18 +319,18 @@ footer{
 
 /*contact page styling*/
 
-.contact-heading{
+.page-heading{
     padding: 5rem 2rem 0;
     text-align: center;
 }
 
-.contact-heading h1{
+.page-heading h1{
     font-size: 3rem;
     color: var(--clr-gold);
     margin-bottom: 15px;
 }
 
-.contact-heading h2{
+.page-heading h2{
     font-size: 1rem;
     opacity: 0.8;
     font-weight: 400;
@@ -362,9 +362,10 @@ footer{
 }
 
 .office-navigation ul li{
-    margin: 10px 0;
+    margin: 15px 0;
     cursor: pointer;
     transition: all .3s;
+    font-size: 1.25rem;
 }
 
 .office-navigation ul li:hover{
@@ -373,6 +374,18 @@ footer{
 
 .selected-office{
     color: var(--clr-gold);
+    position: relative;
+    display: block;
+}
+
+.selected-office::after{
+    width: 100px;
+    height: 2px;
+    content: "";
+    display: block;
+    background-color: var(--clr-gold);
+    position: absolute;
+    bottom: -5px;
 }
 
 .office-details{
@@ -404,6 +417,162 @@ footer{
 .office-details-div span{
     opacity: 0.8;
 }
+
+/*about page styling*/
+
+.about-employees{
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.about-offices{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 50px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 90%;
+}
+
+.about-selection-button{
+    font-size: 1.25rem;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: all .3s;
+    font-family: "Merriweather", serif; 
+}
+
+.about-selection-button:hover{
+    color: var(--clr-gold);
+}
+
+.about-selected{
+    color: var(--clr-gold);
+    position: relative;
+    display: block;
+}
+
+.about-selected::after{
+    width: 100%;
+    height: 2px;
+    content: "";
+    display: block;
+    background-color: var(--clr-gold);
+    position: absolute;
+    bottom: -5px;
+}
+
+.about-employees-images{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 8rem;
+    background-color: black;
+}
+
+.employee-div{
+    position: relative;
+    transition: all .6s;
+}
+
+.employee-div:hover{
+    transform: scale(1.05);
+}
+
+.employee-div img{
+    width: 100%;
+}
+
+.employee-div-helper{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.employee-div-helper p, .employee-div-helper span{
+    z-index: 3;
+    color: var(--clr-gold);
+    position: relative;
+}
+
+.employee-div-helper p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    bottom: 20px;
+}
+
+.employee-div-helper span{
+    opacity: 0.75;
+    bottom: 15px;
+}
+
+.employee-div-bg{
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+}
+
+.about-awards h3{
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--clr-gold);
+}
+
+.about-awards-grid{
+    margin: 100px auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 100px;
+    grid-column-gap: 50px;
+    text-align: center;
+}
+
+.award-component-line{
+    width: 100px;
+    height: 5px;
+    display: block;
+    background-color: var(--clr-gold);
+    margin: 5px auto 20px;
+}
+
+.award-component img{
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.award-component p{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.award-component span{
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
 
 /*responsive design*/
 
@@ -473,6 +642,12 @@ footer{
     .footer-partners{
         flex-direction: column;
     }
+
+    /*about page styling*/
+    .about-employees-images{
+        grid-template-columns: repeat(2,1fr);
+        padding: 2rem 3rem;
+    }
 }
 
 @media (max-width:950px) {
@@ -499,7 +674,7 @@ footer{
 
     /*contact page styling*/
 
-    .contact-heading {
+    .page-heading {
         padding: 2.5rem 1rem 0;
     }
 
@@ -511,6 +686,25 @@ footer{
 
     .office-details, .office-navigation{
         width: 100%;
+    }
+
+    /*about styling start*/
+    .about-offices{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-awards-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-row-gap: 50px;
+        grid-column-gap: 25px;
+    }
+}
+
+@media (max-width:700px) {
+    /*about page styling*/
+    .about-employees-images{
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -603,12 +797,12 @@ footer{
         flex-direction: column;
     }
 
-    .contact-heading h1{
+    .page-heading h1{
         font-size: 2.5rem;
         margin-bottom: 10px;
     }
 
-    .contact-heading h2{
+    .page-heading h2{
         font-size: 0.85rem;
     }
 
@@ -622,7 +816,7 @@ footer{
     }
 
     .office-navigation ul li{
-        margin: 5px 0;
+        margin: 10px 0;
         font-size: 0.85rem;
     }
 
@@ -645,5 +839,66 @@ footer{
 
     .office-details-div span{
         font-size: 0.85rem;
+    }
+
+    /*about page styling*/
+    .about-employees{
+        margin: 50px auto;
+    }
+
+    .about-offices{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .about-employees-images{
+        padding: 1.5rem;
+        gap: 25px;
+    }
+
+    .about-selection-button{
+        font-size: 0.85rem;
+    }
+
+    .employee-div-helper p{
+        font-size: 1.1rem;
+        bottom: 15px;
+    }
+
+    .employee-div-helper span{
+        font-size: 0.85rem;
+        bottom: 15px;
+    }
+
+    .about-awards h3{
+        font-size: 2rem;
+    }
+
+    .about-awards-grid{
+        margin: 25px auto 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .award-component img {
+        width: 100px;
+        height: 75px;
+        margin: 0 auto 10px;
+    }
+
+    .award-component-line {
+        width:50px;
+        height: 3px;
+        margin: 5px auto 10px;
+    }
+    
+    .award-component p {
+        font-size: 1rem;
+    }
+
+    .award-component span {
+        font-size: 0.8rem;
     }
 }
