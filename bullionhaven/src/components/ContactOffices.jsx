@@ -1,4 +1,5 @@
 import { useState } from "react";
+import OfficeDetails from "./OfficeDetails";
 
 const offices = [
     {
@@ -64,7 +65,7 @@ export default function ContactOffices(){
     const [selectedOffice, setSelectedOffice] = useState(offices[0]);
 
     return (
-        <div className="contact-offices">
+        <section className="contact-offices">
           <div className="office-navigation">
             <h3>Our Offices</h3>
             <ul>
@@ -83,31 +84,14 @@ export default function ContactOffices(){
               ))}
             </ul>
           </div>
-          <div className="office-details">
-            <p className="office-details-heading">{selectedOffice.name}</p>
-            <div className="office-details-grid">
-                <div className="office-details-div">
-                    <p>Address:</p>
-                    <span>{selectedOffice.address}</span>
-                </div>
-                <div className="office-details-div">
-                    <p>Level:</p>
-                    <span>{selectedOffice.level}</span>
-                </div>
-                <div className="office-details-div">
-                    <p>Phone:</p>
-                    <span>{selectedOffice.phone}</span>
-                </div>
-                <div className="office-details-div">
-                    <p>Email:</p>
-                    <span>{selectedOffice.email}</span>
-                </div>
-                <div className="office-details-div">
-                    <p>Hours:</p>
-                    <span>{selectedOffice.hours}</span>
-                </div>
-            </div>
-          </div>
-        </div>
+          <OfficeDetails
+            name={selectedOffice.name}
+            address={selectedOffice.address}
+            level={selectedOffice.level}
+            phone={selectedOffice.phone}
+            email={selectedOffice.email}
+            hours={selectedOffice.hours}
+          />
+        </section>
       );
 }

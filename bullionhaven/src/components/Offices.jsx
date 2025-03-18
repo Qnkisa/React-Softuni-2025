@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EmployeeComponent from "./EmployeeComponent";
 
 const offices = [
   "New York, Empire State Building",
@@ -75,11 +76,11 @@ const employeesData = {
     ],
 };
 
-const Offices = () => {
+export default function Offices(){
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
 
   return (
-    <div className="about-employees">
+    <section className="about-employees">
       <div className="about-offices">
         {offices.map((office) => (
           <button
@@ -95,18 +96,14 @@ const Offices = () => {
       </div>
       <div className="about-employees-images">
         {employeesData[selectedOffice]?.map((employee) => (
-          <div key={employee.name} className="employee-div">
-            <img src={employee.img} alt={employee.name} className="employee-image" />
-            <div className="employee-div-helper">
-                <p className="employee-name">{employee.name}</p>
-                <span className="employee-position">{employee.position}</span>
-                <div className="employee-div-bg"></div>
-            </div>
-          </div>
+          <EmployeeComponent
+            name={employee.name}
+            img={employee.img}
+            position={employee.position}
+          />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Offices;

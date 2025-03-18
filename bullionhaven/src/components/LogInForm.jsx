@@ -22,37 +22,39 @@ export default function LogInForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="form-div-helper">
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email..."
-                    required
-                />
-            </div>
-            <div className="form-div-helper">
-                <label htmlFor="password">Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Password..."
-                    required
-                />
-            </div>
-            <div className="form-bottom-flex">
-                <div className="form-link">
-                    <Link to="/register">Register</Link>
+        <section className="log-in-form">
+            <form onSubmit={handleSubmit}>
+                <div className="form-div-helper">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email..."
+                        required
+                    />
                 </div>
-                <div className="form-submit">
-                    <input type="submit" name="log-in" value="Log In" />
+                <div className="form-div-helper">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        placeholder="Password..."
+                        required
+                    />
                 </div>
-            </div>
-        </form>
+                <div className="form-bottom-flex">
+                    <div className="form-link">
+                        <Link to="/register">Register</Link>
+                    </div>
+                    <div className="form-submit">
+                        <input type="submit" name="log-in" value="Log In" />
+                    </div>
+                </div>
+            </form>
+        </section>
     );
 }

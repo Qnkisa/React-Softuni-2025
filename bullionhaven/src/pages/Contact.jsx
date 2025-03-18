@@ -4,10 +4,10 @@ import SpotPrices from "../components/SpotPrices";
 
 export default function Contact(){
     return (
-        <>
+        <section className="contact-page">
             <ContactHeading/>
             <ContactOffices/>
             <SpotPrices/>
-        </>
+        </section>
     );
 }

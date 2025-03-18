@@ -57,7 +57,7 @@ export default function CurrencyConverter() {
     if (loading) return <p>Loading exchange rates...</p>;
 
     return (
-        <div className="currency-converter">
+        <section className="currency-converter">
             <h2>Currency Converter</h2>
             <div className="converter-flex">
                 <input 
@@ -81,6 +81,6 @@ export default function CurrencyConverter() {
             <h3>
                 {amount} {fromCurrency} = {convertedAmount.toFixed(2)} {toCurrency}
             </h3>
-        </div>
+        </section>
     );
 }

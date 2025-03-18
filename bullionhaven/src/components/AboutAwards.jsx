@@ -65,7 +65,7 @@ const awards = [
 
 export default function AboutAwards(){
     return (
-        <div className="about-awards">
+        <section className="about-awards">
             <h3>Awards</h3>
             <div className="about-awards-grid">
                 {awards.map((award, index) => (
@@ -77,6 +77,6 @@ export default function AboutAwards(){
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

@@ -61,7 +61,7 @@ const currencyQnA = [
 
 export default function CurrencyInfo(){
     return (
-        <div className="currency-info">
+        <section className="currency-info">
             <div className="currency-info-components">
                 {currencyInfo.map((info, index) => (
                     <CurrencyInfoComponent
@@ -83,6 +83,6 @@ export default function CurrencyInfo(){
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
