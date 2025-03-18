@@ -728,6 +728,87 @@ footer{
     line-height: 22px;
 }
 
+/*form pages styling*/
+
+.form-page{
+    padding: 3rem 2rem;
+}
+
+.form-page h1{
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--clr-gold);
+    text-align: center;
+}
+
+.form-page form{
+    width: 400px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.form-div-helper{
+    margin-bottom: 25px;
+}
+
+.form-page label{
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-page input[type="email"], .form-page input[type="password"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--clr-gold);
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+    font-family: "Merriweather", serif;
+    transition: all .3s;
+}
+
+.form-page input[type="email"]:focus, .form-page input[type="password"]:focus{
+    font-size: 1.05rem;
+}
+
+.form-bottom-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-link a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding-left: 10px;
+    transition: all .3s;
+    color: black;
+    font-weight: bold;
+}
+
+.form-link a:hover{
+    color: var(--clr-gold);
+}
+
+.form-submit input{
+    border: 1px solid var(--clr-gold);
+    background-color: var(--clr-gold);
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: "Merriweather", serif;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.form-submit input:hover{
+    box-shadow: 0 0 10px 3px var(--clr-gold);
+}
+
+
 
 
 
@@ -1121,5 +1202,37 @@ footer{
     /*currency page styling*/
     .currency-heading{
         font-size: 2.5rem;
+    }
+
+    /*forms page styling*/
+    .form-page{
+        padding: 2rem 1rem;
+    }
+
+    .form-page h1{
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .form-page form{
+        width: 300px;
+        padding: 1rem;
+    }
+
+    .form-div-helper{
+        margin-bottom: 15px;
+    }
+
+    .form-page label{
+        font-size: 1rem;
+    }
+
+    .form-link a{
+        font-size: 1rem;
+    }
+
+    .form-submit input{
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }
