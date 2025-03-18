@@ -9,6 +9,18 @@
 
 /*general styling*/
 
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -566,6 +578,155 @@ footer{
     font-size: 0.9rem;
 }
 
+/*currencies start*/
+
+.currency-heading{
+    font-size: 3rem;
+    color: var(--clr-gold);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.currency-block{
+    padding: 0 5rem;
+}
+
+.currency-converter{
+    margin-bottom: 50px;
+    padding: 2rem;
+    color: white;
+    background-color: var(--clr-gold);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.currency-converter h2{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.converter-flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.converter-flex input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: "Merriweather", serif;
+    transition: all .3s;
+    width: 200px;
+    height: 50px;
+}
+
+.converter-flex input:focus{
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.converter-flex select{
+    font-family: "Merriweather", serif;
+    background-color: black;
+    color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+.converter-flex option {
+    background-color: black;
+    color: var(--clr-gold);
+}
+
+.currency-info{
+    padding: 2rem 0;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px;
+}
+
+.currency-info-components{
+    padding: 0 2rem;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.currency-info-component{
+    margin-bottom: 30px;
+}
+
+.currency-info-component p{
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.currency-info-component span{
+    opacity: 0.7;
+    line-height: 23px;
+    font-size: 0.9rem;
+}
+
+.currency-info-questions{
+    padding: 3rem 2rem 0rem;
+}
+
+.currency-info-questions h4{
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--clr-gold);
+}
+
+.question-answer-component{
+    margin-bottom: 20px;
+}
+
+.qas-question{
+    cursor: pointer;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qas-question-active{
+    color: var(--clr-gold);
+}
+
+.qas-question:hover{
+    color: var(--clr-gold);
+}
+
+.qas-question p{
+    font-size: 1.1rem;
+}
+
+.qas-question-icon{
+    font-size: 1.5rem;
+    position: relative;
+    top: 2px;
+}
+
+.qas-answer{
+    transition: 'opacity 0.5s ease-in-out';
+    margin-top: 10px;
+}
+
+.qas-answer p{
+    position: relative;
+    left: 40px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-width: 450px;
+    line-height: 22px;
+}
 
 
 
@@ -705,6 +866,61 @@ footer{
     .about-employees-images{
         display: flex;
         flex-direction: column;
+    }
+
+    /*currency page styling*/
+    .currency-block{
+        padding: 2rem 2rem 0;
+    }
+
+    .currency-converter{
+        padding: 1rem;
+    }
+
+    .currency-converter h2{
+        font-size: 1.6rem;
+    }
+
+    .converter-flex{
+        flex-direction: column;
+    }
+
+    .currency-info-component{
+        margin-bottom: 20px;
+    }
+
+    .currency-info-component p{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .currency-info-component span{
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+
+    .currency-info-questions{
+        padding: 2rem 1rem 0rem;
+    }
+
+    .currency-info-questions h4{
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .question-answer-component{
+        margin-bottom: 15px;
+    }
+
+    .qas-question p{
+        font-size: 1rem;
+    }
+
+    .qas-answer p{
+        font-size: 0.8rem;
+        line-height: 20px;
+        max-width: 300px;
+        padding-right: 2rem;
     }
 }
 
@@ -900,5 +1116,10 @@ footer{
 
     .award-component span {
         font-size: 0.8rem;
+    }
+
+    /*currency page styling*/
+    .currency-heading{
+        font-size: 2.5rem;
     }
 }
