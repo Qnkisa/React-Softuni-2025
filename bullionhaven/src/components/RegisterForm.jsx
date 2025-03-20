@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { app } from "../config/firebase";
 
 export default function RegisterForm() {
     const [formData, setFormData] = useState({
@@ -7,7 +9,9 @@ export default function RegisterForm() {
         password: "",
         repeatPassword: "",
     });
-
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -16,13 +20,21 @@ export default function RegisterForm() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission (e.g., validate inputs and call an API to register)
+        setError("");
+        
         if (formData.password !== formData.repeatPassword) {
-            console.log("Passwords do not match!");
-        } else {
-            console.log("Form Submitted", formData);
+            setError("Passwords do not match!");
+            return;
+        }
+        
+        const auth = getAuth(app);
+        try {
+            await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+            navigate("/"); // Redirect to login after successful signup
+        } catch (error) {
+            setError(error.message);
         }
     };
 
@@ -62,6 +74,7 @@ export default function RegisterForm() {
                         required
                     />
                 </div>
+                {error && <p className="error-message">{error}</p>}
                 <div className="form-bottom-flex">
                     <div className="form-link">
                         <Link to="/login">Log In</Link>

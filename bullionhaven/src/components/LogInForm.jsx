@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../config/firebase";
 
 export default function LogInForm() {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     });
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -15,10 +19,17 @@ export default function LogInForm() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission (e.g., call an API to log in)
-        console.log("Form Submitted", formData);
+        setError("");
+        
+        const auth = getAuth(app);
+        try {
+            await signInWithEmailAndPassword(auth, formData.email, formData.password);
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     return (
@@ -46,6 +57,7 @@ export default function LogInForm() {
                         required
                     />
                 </div>
+                {error && <p className="error-message">{error}</p>}
                 <div className="form-bottom-flex">
                     <div className="form-link">
                         <Link to="/register">Register</Link>
