@@ -6,38 +6,33 @@ import Products from "./pages/Products";
 import Currency from "./pages/Currency";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
-import Profile from "./pages/Profile";
-import AdminPanel from "./pages/AdminPanel";
+import UserProfile from "./pages/UserProfile";
 import Navbar from './components/Navbar';
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-
-import PageBuildHelper from "./components/PageBuildHelper"
+import ProtectedRoute from "./components/ProtectedRoute"; 
+import PublicRoute from "./components/PublicRoute";
 
 function App() {
-
-
   return (
     <Router>
-      <Navbar/>
-      {/*<PageBuildHelper/>*/}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/currency" element={<Currency />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/login" element={<PublicRoute><LogIn /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+        <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

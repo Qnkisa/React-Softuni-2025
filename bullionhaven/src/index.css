@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
-.page-build-helper{
-    width: 100%;
-    height: 200vh;
-    display: block;
-    position: relative;
-}
-
 /*general styling*/
 
 input[type="number"] {
@@ -144,6 +137,23 @@ nav{
 .login-link{
     border: 2px solid white;
     background-color: white;
+}
+
+.sign-out-button button{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+    transition: all .3s;
+    color: black;
+    font-family: "Merriweather", serif;
+    font-size: 1.05rem;
+    border: none;
+}
+
+.sign-out-button button:hover{
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255);
 }
 
 .login-link:hover{
