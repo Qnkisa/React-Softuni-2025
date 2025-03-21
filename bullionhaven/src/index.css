@@ -152,6 +152,29 @@ nav{
     border: none;
 }
 
+.user-profile-link a{
+    color: white;
+    transition: all .3s;
+    display: block;
+}
+
+.user-profile-link a::after{
+    width: 0%;
+    height: 1px;
+    content: "";
+    display: block;
+    background-color: var(--clr-gold);
+    transition: all .3s;
+}
+
+.user-profile-link a:hover{
+    color: var(--clr-gold);
+}
+
+.user-profile-link a:hover::after{
+    width: 100%;
+}
+
 .sign-out-button button:hover{
     box-shadow: 0 0 15px 3px rgba(255, 255, 255);
 }

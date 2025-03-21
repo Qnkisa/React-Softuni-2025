@@ -118,9 +118,14 @@ export default function Navbar() {
                     </div>
                     <ul className="registration-links">
                         {user ? (
-                            <li className="sign-out-button">
-                                <button onClick={handleSignOut} className="signout-button">Sign Out</button>
-                            </li>
+                            <>
+                                <li className="user-profile-link">
+                                    <Link to="profile">User Profile</Link>
+                                </li>
+                                <li className="sign-out-button">
+                                    <button onClick={handleSignOut} className="signout-button">Sign Out</button>
+                                </li>
+                            </>
                         ) : (
                             <>
                                 <li>

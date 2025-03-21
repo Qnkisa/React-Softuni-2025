@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const API_URL = "https://v6.exchangerate-api.com/v6/3734f1dfade0bb5c6db5ad53/latest/USD";
+const API_URL = import.meta.env.VITE_EXCHANGE_RATE_API_KEY;
 
 export default function CurrencyConverter() {
     const [rates, setRates] = useState({});

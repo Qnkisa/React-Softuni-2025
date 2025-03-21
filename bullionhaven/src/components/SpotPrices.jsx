@@ -5,7 +5,7 @@ import PaladiumOre from "../assets/paladium-ore.png";
 import CopperOre from "../assets/copper-ore.webp";
 
 export default function SpotPrices() {
-    const api = "https://api.gold-api.com/price/";
+    const api = import.meta.env.VITE_SPOT_PRICES_API_KEY;
     const metals = ["XAU", "XAG", "XPD", "HG"];
     
     const [prices, setPrices] = useState({
