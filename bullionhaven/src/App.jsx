@@ -11,10 +11,15 @@ import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import AdminPanel from "./pages/AdminPanel";
+
 import ProtectedRoute from "./components/ProtectedRoute"; 
 import PublicRoute from "./components/PublicRoute";
+import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
 
 function App() {
+  const adminUID = import.meta.env.VITE_ADMIN_UID;
+
   return (
     <Router>
       <Navbar />
@@ -29,6 +34,11 @@ function App() {
         <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+
+        <Route 
+          path="/admin" 
+          element={<ProtectedAdminRoute><AdminPanel /></ProtectedAdminRoute>} 
+        />
       </Routes>
       <Footer />
     </Router>

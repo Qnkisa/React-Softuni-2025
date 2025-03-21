@@ -68,6 +68,8 @@ export default function Navbar() {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const adminUID = import.meta.env.VITE_ADMIN_UID;
+
     useEffect(() => {
         setNavbar(false);
         window.scrollTo(0, 0);
@@ -125,6 +127,11 @@ export default function Navbar() {
                                 <li className="user-profile-link">
                                     <Link to="profile">User Profile</Link>
                                 </li>
+                                {user.uid === adminUID && (
+                                    <li className="user-profile-link">
+                                        <Link to="/admin">Admin Panel</Link>
+                                    </li>
+                                )}
                                 <li className="sign-out-button">
                                     <button onClick={handleSignOut} className="signout-button">Sign Out</button>
                                 </li>
