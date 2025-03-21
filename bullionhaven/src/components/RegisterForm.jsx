@@ -32,9 +32,18 @@ export default function RegisterForm() {
         const auth = getAuth(app);
         try {
             await createUserWithEmailAndPassword(auth, formData.email, formData.password);
-            navigate("/"); // Redirect to login after successful signup
+
+            localStorage.setItem("showSignInSuccess", "true");
+
+            navigate("/");
         } catch (error) {
-            setError(error.message);
+            if (error.code === "auth/email-already-in-use") {
+                setError("Email is already in use!");
+            } else if (error.code === "auth/weak-password") {
+                setError("Password should be at least 6 characters!");
+            } else {
+                setError("An error occurred. Please try again.");
+            }
         }
     };
 

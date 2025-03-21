@@ -26,6 +26,9 @@ export default function LogInForm() {
         const auth = getAuth(app);
         try {
             await signInWithEmailAndPassword(auth, formData.email, formData.password);
+           
+            localStorage.setItem("showSignInSuccess", "true");
+
             navigate("/");
         } catch (error) {
             setError(error.message);
@@ -57,7 +60,7 @@ export default function LogInForm() {
                         required
                     />
                 </div>
-                {error && <p className="error-message">{error}</p>}
+                {error && <p className="error-message">Invalid password or email!</p>}
                 <div className="form-bottom-flex">
                     <div className="form-link">
                         <Link to="/register">Register</Link>

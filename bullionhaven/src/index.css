@@ -841,10 +841,27 @@ footer{
     box-shadow: 0 0 10px 3px var(--clr-gold);
 }
 
+.signed-in-success-message{
+    width: 90%;
+    font-size: 1.25rem;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    position: fixed;
+    top: 2rem;
+    left: 5%;
+    margin: 0 auto;
+    z-index: 10;
+    background-color: rgb(35, 176, 35);
+}
 
-
-
-
+.error-message{
+    color: red;
+    position: relative;
+    left: 10px;
+    bottom: 15px;
+}
 
 
 

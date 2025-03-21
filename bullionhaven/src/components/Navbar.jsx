@@ -57,7 +57,7 @@
 //     );
 // }
 
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import WebsiteLogo from "./WebsiteLogo";
@@ -66,6 +66,7 @@ export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
     const [user, setUser] = useState(null);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setNavbar(false);
@@ -84,6 +85,8 @@ export default function Navbar() {
         const auth = getAuth();
         try {
             await signOut(auth);
+            
+            navigate("/");
         } catch (error) {
             console.error("Error signing out:", error);
         }
