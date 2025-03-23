@@ -97,6 +97,7 @@ export default function Offices(){
       <div className="about-employees-images">
         {employeesData[selectedOffice]?.map((employee) => (
           <EmployeeComponent
+            key={employee.name}
             name={employee.name}
             img={employee.img}
             position={employee.position}
