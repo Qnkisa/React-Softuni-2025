@@ -15,12 +15,11 @@ export default function Details() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Listen for auth state changes
         const unsubscribe = auth.onAuthStateChanged((user) => {
             setUser(user);
         });
 
-        return () => unsubscribe(); // Cleanup on unmount
+        return () => unsubscribe();
     }, []);
 
     useEffect(() => {
@@ -74,28 +73,60 @@ export default function Details() {
 
     return (
         <section className="product-details">
-            <img src={product.imageUrl} alt={product.name} className="product-img"/>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p><strong>Manufacturer:</strong> {product.manufacturer}</p>
-            <p><strong>Material:</strong> {product.material}</p>
-            <p><strong>Type:</strong> {product.bullionType}</p>
-            <p><strong>Weight:</strong> {product.weightInGrams}g</p>
-            <p><strong>Purity:</strong> {product.purity}</p>
-            <p><strong>Pure Weight:</strong> {product.pureWeight}g</p>
-            <p><strong>Total Weight:</strong> {product.totalWeight}g</p>
-            <p><strong>Price:</strong> {price ? `$${price}` : "Fetching..."}</p>
-
-            {user ? (
-                <div>
-                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>-</button>
-                    <span>{quantity}</span>
-                    <button onClick={() => setQuantity(quantity + 1)}>+</button>
-                    <button onClick={handleAddToCart}>Add to Cart</button>
+            <div className="product-details-top">
+                <div className="product-details-top-image">
+                    <img src={`/product-photos/${product.imageUrl}`} alt={product.name} className="product-img"/>
                 </div>
-            ) : (
-                <p><strong>Please log in to add items to your cart.</strong></p>
-            )}
+                <div className="product-details-top-content">                
+                    <h1>{product.name}</h1>
+                    <p>{product.description}</p>
+                    <div className="product-details-top-content-flex">
+                        <p><strong>Price:</strong> {price ? `$${price}` : "Fetching..."}</p>
+                        {user ? (
+                            <div className="details-add-to-cart">
+                                <div className="details-add-to-cart-helper">
+                                    <button className="quantity-button quantity-minus" onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>-</button>
+                                    <span>{quantity}</span>
+                                    <button className="quantity-button quantity-plus" onClick={() => setQuantity(quantity + 1)}>+</button>
+                                </div>
+                                <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+                            </div>
+                        ) : (
+                            <p className="details-log-in-message"><strong>Please log in to add items to your cart.</strong></p>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <div className="product-details-bottom">
+                <h2>Technical Details</h2>
+                <div className="technical-details-grid">
+                    <div className="technical-detail-div">
+                        <p>Manufacturer:</p>
+                        <span>{product.manufacturer}</span>
+                    </div>
+                    <div className="technical-detail-div">
+                        <p>Material:</p>
+                        <span>{product.material}</span>
+                    </div>
+                    <div className="technical-detail-div">
+                        <p>Bullion Type:</p>
+                        <span>{product.bullionType}</span>
+                    </div>
+                    <div className="technical-detail-div">
+                        <p>Total Weight:</p>
+                        <span>{product.totalWeight}g</span>
+                    </div>
+                    <div className="technical-detail-div">
+                        <p>Purity:</p>
+                        <span>{product.purity}</span>
+                    </div>
+                    <div className="technical-detail-div">
+                        <p>Pure Weight:</p>
+                        <span>{product.pureWeight}g</span>
+                    </div>
+                </div>
+            </div>
+            
         </section>
     );
 }
