@@ -12,6 +12,16 @@ export const fetchProducts = async () => {
     return products.sort(() => 0.5 - Math.random()).slice(0, 9);
 };
 
+export const fetchAllProducts = async () => {
+    const querySnapshot = await getDocs(collection(db, "products"));
+    let products = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+
+    return products;
+}
+
 export const fetchMetalPrice = async (material) => {
     const metalCode = material.toLowerCase() === "gold" ? "XAU" : "XAG";
     try {
