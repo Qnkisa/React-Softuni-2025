@@ -16,6 +16,7 @@ import AdminPanel from "./pages/AdminPanel";
 import ProtectedRoute from "./components/ProtectedRoute"; 
 import PublicRoute from "./components/PublicRoute";
 import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
+import Details from "./pages/Details";
 
 function App() {
   const adminUID = import.meta.env.VITE_ADMIN_UID;
@@ -34,7 +35,7 @@ function App() {
         <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-
+        <Route path="/details/:id" element={<Details/>}></Route>
         <Route 
           path="/admin" 
           element={<ProtectedAdminRoute><AdminPanel /></ProtectedAdminRoute>} 

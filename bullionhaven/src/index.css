@@ -1271,6 +1271,134 @@ footer{
     box-shadow: 0 0 15px 3px var(--clr-gold);
 }
 
+.home-products{
+    margin: 100px auto;
+    width: 90%;
+}
+
+.home-products h3{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 2rem;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 100px;
+    margin: 0 auto;
+}
+
+.product-card {
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.product-card img{
+    width: 100%;
+    border: 1px solid var(--clr-gold);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-card p{
+    font-size: 1.25rem;
+    margin: 15px auto 30px;
+    color: var(--clr-gold);
+    font-weight: bold;
+}
+
+.product-card span{
+    color: white;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.admin-product-div-button{
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    color: white;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--clr-gold);
+    padding: 15px 25px;
+    border-radius: 5px;
+    transition: all .3s;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.product-card a:hover{
+    box-shadow: 0 0 15px 3px var(--clr-gold);
+}
+
+.home-testimonials{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home-testimonials h4{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.25rem;
+    padding: 0 2rem;
+}
+
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+    align-items: center;
+    margin: 0 auto 100px;
+}
+
+.testimonial-div{
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.star-flex{
+    color: var(--clr-gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.25rem;
+}
+
+.tesitimonial-person-name{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.testimonial-date{
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.testimonial-div span{
+    line-height: 24px;
+}
+
 
 
 
@@ -1353,6 +1481,16 @@ footer{
     .about-employees-images{
         grid-template-columns: repeat(2,1fr);
         padding: 2rem 3rem;
+    }
+
+    /*home page styling*/
+
+    .product-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .testimonial-grid{
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
@@ -1488,6 +1626,29 @@ footer{
         display: flex;
         flex-direction: column;
 
+    }
+
+    /*home page styling*/
+    .product-grid{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .testimonial-grid{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .star-flex{
+        margin: 0 auto 10px;
+        justify-content: center;
+    }
+
+    .testimonial-div{
+        height: 250px;
     }
 }
 
@@ -1818,5 +1979,44 @@ footer{
 
     .home-heading-cta a{
         padding: 12px 24px;
+    }
+
+    .home-products{
+        margin: 50px auto;
+    }
+
+    .home-products h3{
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .product-grid{
+        gap: 30px;
+    }
+
+    .product-card{
+        padding: 1rem;
+    }
+
+    .product-card p{
+        font-size: 1rem;
+        margin: 10px auto 20px;
+    }
+
+    .home-testimonials h4{
+        font-size: 1.75rem;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-div{
+        padding: 1rem;
+    }
+
+    .star-flex{
+        font-size: 1rem;
+    }
+
+    .testimonial-grid{
+        margin: 0 auto 50px;
     }
 }
