@@ -11,7 +11,6 @@ export default function Home(){
             <HomeHeading/>
             <HomeItems/>
             <HomeTestimonials/>
-            <SpotPrices/>
         </>
     );
 }

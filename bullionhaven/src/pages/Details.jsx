@@ -4,6 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { fetchMetalPrice } from "../services/productService";
 import { auth } from "../config/firebase";
+import WebsiteSuccessMessage from "../components/WebsiteSuccessMessage";
 
 export default function Details() {
     const { id } = useParams();
@@ -13,6 +14,8 @@ export default function Details() {
     const [user, setUser] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const navigate = useNavigate();
+
+    const[showSuccessMessage, setShowSuccessMessage] = useState(false);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -65,7 +68,11 @@ export default function Details() {
         }
     
         localStorage.setItem("cart", JSON.stringify(cart));
-        alert("Product added to cart!");
+        setShowSuccessMessage(true);
+
+        setTimeout(() => {
+            setShowSuccessMessage(false);
+        }, 2000);
     };
 
     if (loading) return <p>Loading product details...</p>;
@@ -73,6 +80,7 @@ export default function Details() {
 
     return (
         <section className="product-details">
+            {showSuccessMessage && <WebsiteSuccessMessage successMessage="Product added to cart successfully!"/>}
             <div className="product-details-top">
                 <div className="product-details-top-image">
                     <img src={`/product-photos/${product.imageUrl}`} alt={product.name} className="product-img"/>

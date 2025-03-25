@@ -58,6 +58,9 @@ export default function CurrencyConverter() {
 
     return (
         <section className="currency-converter">
+            <div className="currency-converter-icon">
+                <ion-icon name="cash-outline"></ion-icon>
+            </div>
             <h2>Currency Converter</h2>
             <div className="converter-flex">
                 <input 

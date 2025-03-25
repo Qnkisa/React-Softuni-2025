@@ -16,6 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
 import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
 import Details from "./pages/Details";
+import SpotPrices from "./components/SpotPrices";
 
 function App() {
   const adminUID = import.meta.env.VITE_ADMIN_UID;
@@ -39,6 +40,7 @@ function App() {
           element={<ProtectedAdminRoute><AdminPanel /></ProtectedAdminRoute>} 
         />
       </Routes>
+      <SpotPrices/>
       <Footer />
     </Router>
   );

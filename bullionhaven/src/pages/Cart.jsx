@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { db, auth } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import WebsiteSuccessMessage from "../components/WebsiteSuccessMessage";
 
 export default function Cart() {
     const [cart, setCart] = useState([]);
@@ -9,11 +10,22 @@ export default function Cart() {
     const [address, setAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
     const phoneRegex = /^\+?\d{1,4}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{3}[-.\s]?\d{4,6}$/;
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             setUser(user);
+            if (!user) {
+                localStorage.removeItem("cart");
+                setCart([]);
+            } else {
+                const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+                setCart(storedCart);
+            }
         });
         return () => unsubscribe();
     }, []);
@@ -39,18 +51,8 @@ export default function Cart() {
     };
 
     const handleOrder = async () => {
-        if (!user) {
-            alert("Please log in to place an order.");
-            return;
-        }
-
         if (!phoneRegex.test(phoneNumber)) {
-            alert("Please enter a valid phone number.");
-            return;
-        }
-    
-        if (!fullName || !address || !phoneNumber) {
-            alert("Please fill in all details.");
+            setShowErrorMessage(true);
             return;
         }
     
@@ -67,6 +69,7 @@ export default function Cart() {
         });
     
         const totalPrice = cart.reduce((total, item) => total + (item.price || 0) * (item.quantity || 1), 0);
+        const formattedTotalPrice = totalPrice.toFixed(2);
     
         try {
             await addDoc(collection(db, "orders"), {
@@ -75,12 +78,16 @@ export default function Cart() {
                 address,
                 phoneNumber,
                 items: formattedItems,
-                totalPrice,
+                totalPrice: formattedTotalPrice,
                 orderDate: new Date()
             });
-            alert("Order placed successfully!");
+            setShowSuccessMessage(true);
             setCart([]);
             localStorage.removeItem("cart");
+
+            setTimeout(() => {
+                setShowSuccessMessage(false);
+            }, 2000);
         } catch (error) {
             console.error("Error placing order:", error);
         }
@@ -88,6 +95,7 @@ export default function Cart() {
 
     return (
         <section className="cart-page">
+            {showSuccessMessage && <WebsiteSuccessMessage successMessage="Order completed successfully!"/>}
             <h1>Your Cart</h1>
             
             {!user ? (
@@ -121,22 +129,44 @@ export default function Cart() {
                             </div>
 
                             <div className="order-form">
-                                <div className="order-form-helper">
+                                <form className="order-form-helper" onSubmit={(e) => { e.preventDefault(); handleOrder(); }}>
                                     <h2 id="order-details-order">Order Details</h2>
                                     <div className="order-form-div">
                                         <label htmlFor="full-name-cart">Full Name:</label>
-                                        <input type="text" id="full-name-cart" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+                                        <input
+                                            type="text"
+                                            id="full-name-cart"
+                                            placeholder="Full Name"
+                                            value={fullName}
+                                            onChange={(e) => setFullName(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                     <div className="order-form-div">
                                         <label htmlFor="address-cart">Address:</label>
-                                        <input type="text" id="address-cart" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+                                        <input
+                                            type="text"
+                                            id="address-cart"
+                                            placeholder="Address"
+                                            value={address}
+                                            onChange={(e) => setAddress(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                     <div className="order-form-div">
                                         <label htmlFor="phone-number-cart">Phone Number:</label>
-                                        <input type="number" id="phone-number-cart" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+                                        <input
+                                            type="number"
+                                            id="phone-number-cart"
+                                            placeholder="Phone Number"
+                                            value={phoneNumber}
+                                            onChange={(e) => setPhoneNumber(e.target.value)}
+                                            required
+                                        />
                                     </div>
-                                    <button onClick={handleOrder}>Place Order</button>
-                                </div>
+                                    {showErrorMessage && <p className="error-message error-message-cart">Please enter a valid phone number!</p>}
+                                    <button type="submit">Place Order</button>
+                                </form>
                             </div>
                         </div>
                     )}

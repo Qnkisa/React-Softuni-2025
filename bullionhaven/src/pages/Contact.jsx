@@ -7,7 +7,6 @@ export default function Contact(){
         <section className="contact-page">
             <ContactHeading/>
             <ContactOffices/>
-            <SpotPrices/>
         </section>
     );
 }

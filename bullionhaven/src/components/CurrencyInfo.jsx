@@ -72,7 +72,12 @@ export default function CurrencyInfo(){
                     ))}
             </div>
             <div className="currency-info-questions">
-                <h4>Frequently asked questions</h4>
+                <div className="currency-info-questions-heading">
+                    <div className="currency-info-questions-heading-icon">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                    </div>
+                    <h4>Frequently asked questions</h4>
+                </div>
                 <div className="currency-info-questions-div">
                     {currencyQnA.map((question, index) => (
                         <QuestionAnswerComponent

@@ -1,15 +1,13 @@
 import AboutAwards from "../components/AboutAwards";
 import AboutHeading from "../components/AboutHeading";
-import Offices from "../components/Offices";
-import SpotPrices from "../components/SpotPrices";
+import AboutOffices from "../components/AboutOffices";
 
 export default function About(){
     return (
-        <section className="about-page">
+        <>
             <AboutHeading/>
-            <Offices/>
+            <AboutOffices/>
             <AboutAwards/>
-            <SpotPrices/>
-        </section>
+        </>
     );
 }

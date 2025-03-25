@@ -9,7 +9,7 @@ export default function ChangePassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState("");
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -25,7 +25,7 @@ export default function ChangePassword() {
   const handlePasswordChange = async (e) => {
     e.preventDefault();
     setError("");
-    setSuccessMessage("");
+    setShowSuccessMessage("");
 
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
@@ -46,7 +46,7 @@ export default function ChangePassword() {
       
       await updatePassword(user, password);
       
-      setSuccessMessage("Password updated successfully.");
+      setShowSuccessMessage("Password updated successfully.");
       setPassword("");
       setConfirmPassword("");
       setOldPassword("");
@@ -109,7 +109,7 @@ export default function ChangePassword() {
           />
         </div>
         {error && <p className="error-message">{error}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>}
+        {showSuccessMessage && <p className="success-message">{showSuccessMessage}</p>}
         <div className="form-group">
           <button type="submit">Change Password</button>
         </div>

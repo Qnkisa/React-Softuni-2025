@@ -1,17 +1,3 @@
-import React, { useState } from "react";
-import EmployeeComponent from "./EmployeeComponent";
-
-const offices = [
-  "New York, Empire State Building",
-  "Los Angeles, Sunset Tower",
-  "Chicago, Willis Tower",
-  "Houston, Galleria",
-  "Miami, Brickell Tower",
-  "San Francisco, Market Street",
-  "Boston, Prudential Tower",
-  "Administration office",
-];
-
 const employeesData = {
     "New York, Empire State Building": [
       { name: "John Doe", position: "Manager", img: "../src/assets/people-photos/john-doe-edited.png" },
@@ -76,35 +62,4 @@ const employeesData = {
     ],
 };
 
-export default function Offices(){
-  const [selectedOffice, setSelectedOffice] = useState(offices[0]);
-
-  return (
-    <section className="about-employees">
-      <div className="about-offices">
-        {offices.map((office) => (
-          <button
-            key={office}
-            className={`about-selection-button ${
-              selectedOffice === office ? "about-selected" : "about-non-selected"
-            }`}
-            onClick={() => setSelectedOffice(office)}
-          >
-            {office}
-          </button>
-        ))}
-      </div>
-      <div className="about-employees-images">
-        {employeesData[selectedOffice]?.map((employee) => (
-          <EmployeeComponent
-            key={employee.name}
-            name={employee.name}
-            img={employee.img}
-            position={employee.position}
-          />
-        ))}
-      </div>
-    </section>
-  );
-};
-
+export default employeesData;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SignInSuccessMessage from "../components/SignInSucessMessage";
+import WebsiteSuccessMessage from "./WebsiteSuccessMessage";
 
 export default function HomeMessages(){
     const [showSignInMessage, setShowSignInMessage] = useState(false);
@@ -10,13 +10,13 @@ export default function HomeMessages(){
             setTimeout(() => {
                 setShowSignInMessage(false);
                 localStorage.removeItem("showSignInSuccess");
-            }, 3000);
+            }, 2000);
         }
     }, []);
 
     return (
         <>
-            {showSignInMessage && <SignInSuccessMessage />}
+            {showSignInMessage && <WebsiteSuccessMessage successMessage="User signed in successfully!"/>}
         </>
     );
 }

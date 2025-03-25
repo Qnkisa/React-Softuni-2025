@@ -614,6 +614,10 @@ footer{
 
 /*currencies start*/
 
+.currency-page{
+    margin: 50px auto;
+}
+
 .currency-heading{
     font-size: 3rem;
     color: var(--clr-gold);
@@ -632,6 +636,10 @@ footer{
     background-color: var(--clr-gold);
     margin: 0 auto;
     text-align: center;
+}
+
+.currency-converter-icon{
+    font-size: 4rem;
 }
 
 .currency-converter h2{
@@ -712,9 +720,22 @@ footer{
     padding: 3rem 2rem 0rem;
 }
 
+.currency-info-questions-heading{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.currency-info-questions-heading-icon{
+    color: var(--clr-gold);
+    font-size: 4rem;
+    position: relative;
+    top: 5px;
+}
+
 .currency-info-questions h4{
     font-size: 2rem;
-    margin-bottom: 40px;
     color: var(--clr-gold);
 }
 
@@ -842,11 +863,11 @@ footer{
     box-shadow: 0 0 10px 3px var(--clr-gold);
 }
 
-.signed-in-success-message{
+.website-success-message{
     width: 90%;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 20px;
     text-align: center;
     position: fixed;
@@ -862,6 +883,10 @@ footer{
     position: relative;
     left: 10px;
     bottom: 15px;
+}
+
+.error-message-cart{
+    bottom: 5px;
 }
 
 /*user profile styling*/
@@ -1419,6 +1444,7 @@ footer{
 
 .product-details-top-image img{
     width: 100%;
+    border-radius: 10px;
 }
 
 .product-details-top-content{
@@ -1689,16 +1715,11 @@ footer{
     font-size: 1.5rem;
 }
 
-.order-form{
-    text-align: center;
-}
-
 .order-form-helper{
     width: 400px;
     box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     padding: 2rem;
-    border-radius: 10px;
 }
 
 .order-form-div{
@@ -1715,6 +1736,7 @@ footer{
     font-size: 1.1rem;
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .order-form-div input{
@@ -1988,9 +2010,12 @@ footer{
         padding: 2rem 1rem 0rem;
     }
 
+    .currency-info-questions-heading{
+        margin-bottom: 25px;
+    }
+
     .currency-info-questions h4{
         font-size: 1.6rem;
-        margin-bottom: 25px;
     }
 
     .question-answer-component{
@@ -2506,16 +2531,14 @@ footer{
     }
 
     .order-form-helper{
-        width: 100%;
+        width: 300px;
     }
 
     #order-details-order{
         font-size: 2rem;
-        margin-bottom: 15px;
     }
 
     .order-form-div label{
         font-size: 1rem;
-        margin-bottom: 5px;
     }
 }
