@@ -54,16 +54,16 @@ export default function Details() {
             navigate("/login");
             return;
         }
-
+    
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingItemIndex = cart.findIndex((item) => item.id === id);
-
+    
         if (existingItemIndex !== -1) {
             cart[existingItemIndex].quantity += quantity;
         } else {
-            cart.push({ ...product, price, quantity });
+            cart.push({ ...product, id, price, quantity });
         }
-
+    
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Product added to cart!");
     };

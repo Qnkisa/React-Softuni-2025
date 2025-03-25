@@ -10,7 +10,6 @@ import UserProfile from "./pages/UserProfile";
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
 import AdminPanel from "./pages/AdminPanel";
 
 import ProtectedRoute from "./components/ProtectedRoute"; 
@@ -34,7 +33,6 @@ function App() {
         <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
         <Route path="/profile/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/details/:id" element={<Details/>}></Route>
         <Route 
           path="/admin" 
