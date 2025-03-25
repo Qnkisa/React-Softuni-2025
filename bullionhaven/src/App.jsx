@@ -32,7 +32,7 @@ function App() {
         <Route path="/currency" element={<Currency />} />
         <Route path="/login" element={<PublicRoute><LogIn /></PublicRoute>} />
         <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-        <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+        <Route path="/profile/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/details/:id" element={<Details/>}></Route>

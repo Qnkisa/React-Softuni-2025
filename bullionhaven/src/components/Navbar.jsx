@@ -125,7 +125,7 @@ export default function Navbar() {
                         {user ? (
                             <>
                                 <li className="user-profile-link">
-                                    <Link to="profile">User Profile</Link>
+                                <Link to={user ? `/profile/${user.uid}` : "/login"}>User Profile</Link>
                                 </li>
                                 {user.uid === adminUID && (
                                     <li className="user-profile-link">
