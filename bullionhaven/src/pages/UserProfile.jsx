@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import ChangePassword from "../components/ChangePassword";
-import SpotPrices from "../components/SpotPrices";
 import UserOrders from "../components/UserOrders";
 import { app } from "../config/firebase";
+import UserProfileHeading from "../components/UserProfileHeading";
 
 export default function UserProfile() {
     const { userId } = useParams();
@@ -37,12 +37,7 @@ export default function UserProfile() {
     return (
         <>
             <div className="user-profile-top">
-                <div className="profile-left">
-                    <div className="profile-left-icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                    <h1>Your Profile</h1>
-                </div>
+                <UserProfileHeading/>
                 <ChangePassword />
             </div>
             <UserOrders />

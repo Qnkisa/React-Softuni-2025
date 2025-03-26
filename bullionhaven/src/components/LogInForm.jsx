@@ -39,10 +39,11 @@ export default function LogInForm() {
         <section className="log-in-form">
             <form onSubmit={handleSubmit}>
                 <div className="form-div-helper">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email-login">Email</label>
                     <input
                         type="email"
                         name="email"
+                        id="email-login"
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email..."
@@ -50,10 +51,11 @@ export default function LogInForm() {
                     />
                 </div>
                 <div className="form-div-helper">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password-login">Password</label>
                     <input
                         type="password"
                         name="password"
+                        id="password-login"
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password..."

@@ -51,10 +51,11 @@ export default function RegisterForm() {
         <section className="register-form">
             <form onSubmit={handleSubmit}>
                 <div className="form-div-helper">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email-register">Email</label>
                     <input
                         type="email"
                         name="email"
+                        id="email-register"
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email..."
@@ -62,10 +63,11 @@ export default function RegisterForm() {
                     />
                 </div>
                 <div className="form-div-helper">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password-register">Password</label>
                     <input
                         type="password"
                         name="password"
+                        id="password-register"
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password..."
@@ -73,10 +75,11 @@ export default function RegisterForm() {
                     />
                 </div>
                 <div className="form-div-helper">
-                    <label htmlFor="repeat-password">Repeat Password</label>
+                    <label htmlFor="repeat-password-register">Repeat Password</label>
                     <input
                         type="password"
                         name="repeatPassword"
+                        id="repeat-password-register"
                         value={formData.repeatPassword}
                         onChange={handleChange}
                         placeholder="Repeat Password..."

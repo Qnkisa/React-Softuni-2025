@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { db } from "../config/firebase";
 import { collection, addDoc, updateDoc, deleteDoc, getDocs, doc } from "firebase/firestore";
 import AdminProductDiv from "../components/AdminProductDiv";
+import { fetchAllProducts } from "../services/productService";
 
 export default function AdminPanel() {
     const [products, setProducts] = useState([]);
@@ -25,6 +26,10 @@ export default function AdminPanel() {
     const formRef = useRef(null);
 
     useEffect(() => {
+        const fetchProducts = async () => {
+            const productsData = await fetchAllProducts();
+            setProducts(productsData);
+        };
         fetchProducts();
     }, []);
 
@@ -35,11 +40,6 @@ export default function AdminPanel() {
             document.body.style.overflow = "";
         }
     }, [deleteId]);
-
-    const fetchProducts = async () => {
-        const querySnapshot = await getDocs(collection(db, "products"));
-        setProducts(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,7 +59,17 @@ export default function AdminPanel() {
             manufacturer: "", imageUrl: ""
         });
         setEditingId(null);
-        fetchProducts();
+        
+        const updatedProducts = await fetchAllProducts(); // Refresh product list
+        setProducts(updatedProducts);
+    };
+    
+    const handleDelete = async () => {
+        await softDeleteProduct(deleteId);
+        setDeleteId(null);
+        
+        const updatedProducts = await fetchAllProducts(); // Refresh product list
+        setProducts(updatedProducts);
     };
 
     const handleEdit = (product) => {
@@ -69,18 +79,6 @@ export default function AdminPanel() {
         if (formRef.current) {
             formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-    };
-
-    // const handleDelete = async () => {
-    //     await deleteDoc(doc(db, "products", deleteId));
-    //     setDeleteId(null);
-    //     fetchProducts();
-    // };
-    const handleDelete = async () => {
-        await updateDoc(doc(db, "products", deleteId), { deleted: true });
-    
-        setDeleteId(null);
-        fetchProducts();
     };
 
     return (
