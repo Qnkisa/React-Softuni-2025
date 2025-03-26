@@ -64,7 +64,8 @@ export default function Cart() {
                 productId: item.id || "MISSING_ID",
                 productName: item.name || "Unknown Product",
                 quantity: item.quantity || 1,
-                price: Number(item.price) || 0
+                price: Number(item.price) || 0,
+                imageUrl: item.imageUrl || "" 
             };
         });
     

@@ -1,12 +1,11 @@
 import ContactHeading from "../components/ContactHeading";
-import ContactOffices from "../components/ContactOffices"
-import SpotPrices from "../components/SpotPrices";
+import ContactOffices from "../components/ContactOffices";
 
 export default function Contact(){
     return (
-        <section className="contact-page">
+        <>
             <ContactHeading/>
             <ContactOffices/>
-        </section>
+        </>
     );
 }

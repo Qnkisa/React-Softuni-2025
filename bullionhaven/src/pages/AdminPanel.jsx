@@ -71,8 +71,14 @@ export default function AdminPanel() {
         }
     };
 
+    // const handleDelete = async () => {
+    //     await deleteDoc(doc(db, "products", deleteId));
+    //     setDeleteId(null);
+    //     fetchProducts();
+    // };
     const handleDelete = async () => {
-        await deleteDoc(doc(db, "products", deleteId));
+        await updateDoc(doc(db, "products", deleteId), { deleted: true });
+    
         setDeleteId(null);
         fetchProducts();
     };

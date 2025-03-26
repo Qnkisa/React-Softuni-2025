@@ -994,15 +994,15 @@ footer{
 .user-orders{
     width: 90%;
     margin: 50px auto;
-    color: white;
-    background-color: var(--clr-gold);
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 2rem;
 }
 
 .user-orders h3{
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    color: var(--clr-gold);
 }
 
 .no-orders{
@@ -1135,6 +1135,11 @@ footer{
 .admin-product-div p{
     font-size: 1.25rem;
     margin: 15px auto 30px;
+}
+
+.item-removed-from-db{
+    font-size: 1rem;
+    color: rgb(209, 53, 53);
 }
 
 .admin-product-div-button{
@@ -1771,6 +1776,83 @@ footer{
     box-shadow: 0 0 15px 3px var(--clr-gold);
 }
 
+.order-card{
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--clr-gold);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.order-card-info{
+    text-align: left;
+}
+
+.order-card-info span{
+    font-size: 1.75rem;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.order-card-info p{
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.order-items span{
+    font-size: 1.75rem;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.order-item{
+    margin-bottom: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.order-item img{
+    width: 150px;
+    border-radius: 10px;
+}
+
+.order-item-info{
+    text-align: left;
+}
+
+.order-item-info p{
+    margin-bottom: 10px;
+}
+
+
+.order-item-info p:first-child{
+    color: var(--clr-gold);
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.order-total{
+    font-size: 1.35rem;
+}
+
+.user-orders-div{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
 
 
 
@@ -1965,6 +2047,17 @@ footer{
     .cart-div{
         display: flex;
         flex-direction: column;
+    }
+
+    /*user details styling*/
+    .order-card{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .order-card-info{
+        text-align: center;
     }
 }
 
@@ -2540,5 +2633,62 @@ footer{
 
     .order-form-div label{
         font-size: 1rem;
+    }
+
+    /*user details styling*/
+    .user-orders{
+        padding: 1rem;
+    }
+
+    .user-orders h3{
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .order-card{
+        padding: 1rem;
+    }
+
+    .order-card-info span{
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .order-card-info p{
+        font-size: 0.85rem;
+        margin-bottom: 10px; 
+    }
+
+    .order-items span{
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .order-item{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .order-item-info{
+        text-align: center;
+    }
+
+    .order-item-info p{
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .order-item-info p:first-child{
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .order-total{
+        font-size: 1.1rem;
+    }
+
+    .user-orders-div{
+        gap: 25px;
     }
 }
