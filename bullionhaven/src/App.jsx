@@ -19,7 +19,7 @@ import Details from "./pages/Details";
 import SpotPrices from "./components/SpotPrices";
 
 function App() {
-  const adminUID = import.meta.env.VITE_ADMIN_UID;
+  const adminUID = "9tr19YEHTaXKUJXK0DUzAqQFt642";
 
   return (
     <Router>

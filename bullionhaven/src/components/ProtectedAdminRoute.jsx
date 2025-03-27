@@ -5,7 +5,7 @@ const ProtectedAdminRoute = ({ children }) => {
     const auth = getAuth();
     const user = auth.currentUser;
 
-    if (!user || user.uid !== import.meta.env.VITE_ADMIN_UID) {
+    if (!user || user.uid !== "9tr19YEHTaXKUJXK0DUzAqQFt642") {
         return <Navigate to="/" replace />;
     }
 

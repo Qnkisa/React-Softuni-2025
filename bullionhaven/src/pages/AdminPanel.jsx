@@ -60,7 +60,7 @@ export default function AdminPanel() {
         });
         setEditingId(null);
         
-        const updatedProducts = await fetchAllProducts(); // Refresh product list
+        const updatedProducts = await fetchAllProducts();
         setProducts(updatedProducts);
     };
     
@@ -68,7 +68,7 @@ export default function AdminPanel() {
         await softDeleteProduct(deleteId);
         setDeleteId(null);
         
-        const updatedProducts = await fetchAllProducts(); // Refresh product list
+        const updatedProducts = await fetchAllProducts();
         setProducts(updatedProducts);
     };
 

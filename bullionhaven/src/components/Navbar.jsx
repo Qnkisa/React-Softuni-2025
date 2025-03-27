@@ -9,7 +9,7 @@ export default function Navbar() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const adminUID = import.meta.env.VITE_ADMIN_UID;
+    const adminUID = "9tr19YEHTaXKUJXK0DUzAqQFt642";
 
     useEffect(() => {
         setNavbar(false);

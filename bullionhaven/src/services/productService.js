@@ -8,9 +8,8 @@ export const fetchProducts = async () => {
             id: doc.id,
             ...doc.data(),
         }))
-        .filter(product => !product.deleted); // Exclude deleted products
+        .filter(product => !product.deleted);
 
-    // Shuffle and take 9 random products
     return products.sort(() => 0.5 - Math.random()).slice(0, 9);
 };
 
@@ -21,7 +20,7 @@ export const fetchAllProducts = async () => {
             id: doc.id,
             ...doc.data(),
         }))
-        .filter(product => !product.deleted); // Exclude deleted products
+        .filter(product => !product.deleted);
 
     return products;
 };
@@ -52,5 +51,3 @@ export const calculateProductPrices = async (products) => {
 
     return productPrices;
 };
-
-//admin panel services
