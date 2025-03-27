@@ -103,12 +103,24 @@ export default function AdminPanel() {
                     <input type="number" name="premium" id="product-premium" value={formData.premium} onChange={handleChange} placeholder="Premium" required />
                     
                     <label>Material:</label>
-                    <label><input type="radio" name="material" value="gold" checked={formData.material === "gold"} onChange={handleChange} /> Gold</label>
-                    <label><input type="radio" name="material" value="silver" checked={formData.material === "silver"} onChange={handleChange} /> Silver</label>
+                    <label className="radio-container">Gold
+                        <input type="radio" name="material" value="gold" checked={formData.material === "gold"} onChange={handleChange} />
+                        <span className="radio-checkmark"></span>
+                    </label>
+                    <label className="radio-container">Silver
+                        <input type="radio" name="material" value="silver" checked={formData.material === "silver"} onChange={handleChange} />
+                        <span className="radio-checkmark"></span>
+                    </label>
                     
                     <label>Bullion Type:</label>
-                    <label><input type="radio" name="bullionType" value="ingot" checked={formData.bullionType === "ingot"} onChange={handleChange} /> Ingot</label>
-                    <label><input type="radio" name="bullionType" value="coin" checked={formData.bullionType === "coin"} onChange={handleChange} /> Coin</label>
+                    <label className="radio-container">Ingot
+                        <input type="radio" name="bullionType" value="ingot" checked={formData.bullionType === "ingot"} onChange={handleChange} />
+                        <span className="radio-checkmark"></span>
+                    </label>
+                    <label className="radio-container">Coin
+                        <input type="radio" name="bullionType" value="coin" checked={formData.bullionType === "coin"} onChange={handleChange} />
+                        <span className="radio-checkmark"></span>
+                    </label>
                     
                     <label htmlFor="total-weight">Total weight:</label>
                     <input type="number" name="totalWeight" id="total-weight" value={formData.totalWeight} onChange={handleChange} placeholder="Total Weight" required />
