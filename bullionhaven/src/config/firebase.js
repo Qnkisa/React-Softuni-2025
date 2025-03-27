@@ -1,15 +1,15 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth"
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCiv58hCV37K-ncWQv5oPvxDe_P0KzPhzA",
-  authDomain: "bullion-haven-5726c.firebaseapp.com",
-  projectId: "bullion-haven-5726c",
-  storageBucket: "bullion-haven-5726c.firebasestorage.app",
-  messagingSenderId: "476455709849",
-  appId: "1:476455709849:web:858c8921544439a47edc08",
-  measurementId: "G-LNFQTEEYBK",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
