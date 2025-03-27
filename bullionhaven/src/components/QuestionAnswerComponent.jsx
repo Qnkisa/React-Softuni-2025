@@ -10,7 +10,7 @@ export default function QuestionAnswerComponent({ question, answer }){
     return (
         <div className="question-answer-component">
             <div className={showAnswer ? "qas-question qas-question-active" : "qas-question"} onClick={toggleAnswer}>
-                <div className="qas-question-icon"><ion-icon name="add-outline"></ion-icon></div>
+                <div className="qas-question-icon"><img src="/website-icons/plus-icon.png" alt="" /></div>
                 <p>{question}</p>
             </div>
             {showAnswer && (

@@ -34,11 +34,11 @@ export default function Footer(){
                     <span>Phone: (415) 867-5309</span>
                     <span>Email: bullion@bullionhaven.com</span>
                     <div className="footer-socials">
-                        <p><ion-icon name="logo-facebook"></ion-icon></p>
-                        <p><ion-icon name="logo-instagram"></ion-icon></p>
-                        <p><ion-icon name="logo-linkedin"></ion-icon></p>
-                        <p><ion-icon name="logo-youtube"></ion-icon></p>
-                        <p><ion-icon name="logo-twitter"></ion-icon></p>
+                        <img src="/website-icons/facebook-logo.png" alt="" />
+                        <img src="/website-icons/linkedin-logo.png" alt="" />
+                        <img src="/website-icons/instagram-logo.png" alt="" />
+                        <img src="/website-icons/youtube-logo.png" alt="" />
+                        <img src="/website-icons/twitter-logo.png" alt="" />
                     </div>
                 </div>
                 <div className="footer-info-div footer-simular">

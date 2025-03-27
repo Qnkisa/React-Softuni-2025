@@ -86,7 +86,7 @@ export default function AdminPanel() {
             <div className="admin-panel-top">
                 <div className="admin-panel-heading">
                     <div className="admin-panel-heading-icon">
-                        <ion-icon name="construct-outline"></ion-icon>
+                        <img src="/website-icons/construction-edited.png" alt="" />
                     </div>
                     <h1>Admin Panel</h1>
                 </div>

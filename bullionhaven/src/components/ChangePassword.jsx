@@ -58,9 +58,6 @@ export default function ChangePassword() {
   return (
     <section className="change-password">
       <div className="change-password-heading">
-        <div className="change-password-heading-icon">
-          <ion-icon name="shield-half-outline"></ion-icon>
-        </div>
         <h2>Change Password</h2>
       </div>
       <form onSubmit={handlePasswordChange}>

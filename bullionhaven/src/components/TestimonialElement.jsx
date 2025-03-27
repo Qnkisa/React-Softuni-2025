@@ -2,11 +2,11 @@ export default function TestimonialElement({personName, testimonialDate, testimo
     return (
         <div className="testimonial-div">
             <div className="star-flex">
-                <ion-icon name="star-outline"></ion-icon>
-                <ion-icon name="star-outline"></ion-icon>
-                <ion-icon name="star-outline"></ion-icon>
-                <ion-icon name="star-outline"></ion-icon>
-                <ion-icon name="star-outline"></ion-icon>
+                <img src="/website-icons/star-icon.png" alt="" />
+                <img src="/website-icons/star-icon.png" alt="" />
+                <img src="/website-icons/star-icon.png" alt="" />
+                <img src="/website-icons/star-icon.png" alt="" />
+                <img src="/website-icons/star-icon.png" alt="" />
             </div>
             <p className="tesitimonial-person-name">{personName}</p>
             <p className="testimonial-date">{testimonialDate}</p>
