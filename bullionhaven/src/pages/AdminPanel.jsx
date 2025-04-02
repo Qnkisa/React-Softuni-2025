@@ -63,6 +63,11 @@ export default function AdminPanel() {
         const updatedProducts = await fetchAllProducts();
         setProducts(updatedProducts);
     };
+
+    const softDeleteProduct = async (productId) => {
+        const productRef = doc(db, "products", productId);
+        await updateDoc(productRef, { deleted: true });
+    };
     
     const handleDelete = async () => {
         await softDeleteProduct(deleteId);
