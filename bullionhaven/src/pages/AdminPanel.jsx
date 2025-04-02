@@ -33,6 +33,7 @@ export default function AdminPanel() {
         fetchProducts();
     }, []);
 
+    //premahva scrolvaneto kogato delete modal-a e otvoren
     useEffect(() => {
         if (deleteId) {
             document.body.style.overflow = "hidden";

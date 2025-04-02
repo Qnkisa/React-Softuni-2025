@@ -10,6 +10,7 @@ export default function CurrencyConverter() {
     const [convertedAmount, setConvertedAmount] = useState(0);
     const [loading, setLoading] = useState(true);
 
+    //fetching new apis only if the data is updated
     useEffect(() => {
         const fetchRates = async () => {
             try {

@@ -17,6 +17,9 @@ export default function Cart() {
     const phoneRegex = /^\+?\d{1,4}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{3}[-.\s]?\d{4,6}$/;
 
     useEffect(() => {
+        //activates when user logs in/logs out.
+        //when logging out it empties the cart.
+        //when logging in it fills the cart with local storage.
         const unsubscribe = auth.onAuthStateChanged((user) => {
             setUser(user);
             if (!user) {
@@ -30,6 +33,7 @@ export default function Cart() {
         return () => unsubscribe();
     }, []);
 
+    //sets cart to local storage initially
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
         setCart(storedCart);
