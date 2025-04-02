@@ -12,14 +12,10 @@ export default function AdminProductDiv({ product, handleEdit, setDeleteId }) {
         <div className="admin-product-div">
             <img src={`/product-photos/${product.imageUrl}`} alt={product.name} />
             <p>{product.name}</p>
-            {isDeleted ? (
-                <span className="item-removed-from-db">Item is removed from the collection.</span>
-            ) : (
             <div className="admin-product-div-flex">
                 <button className="admin-product-div-button admin-product-div-edit" onClick={() => handleEdit(product)}>Edit</button>
                 <button className="admin-product-div-button admin-product-div-delete" onClick={handleDelete}>Delete</button>
             </div>
-            )}
         </div>
     );
 }
