@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../config/firebase";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function RegisterForm() {
     const [formData, setFormData] = useState({
@@ -11,7 +12,8 @@ export default function RegisterForm() {
     });
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    
+    const { setShowSignInMessage } = useAuthContext();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -23,18 +25,17 @@ export default function RegisterForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
-        
+
         if (formData.password !== formData.repeatPassword) {
             setError("Passwords do not match!");
             return;
         }
-        
+
         const auth = getAuth(app);
         try {
             await createUserWithEmailAndPassword(auth, formData.email, formData.password);
 
-            localStorage.setItem("showSignInSuccess", "true");
-
+            setShowSignInMessage(true);
             navigate("/");
         } catch (error) {
             if (error.code === "auth/email-already-in-use") {

@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import WebsiteSuccessMessage from "../message-components/WebsiteSuccessMessage";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function HomeMessages() {
-    const [showSignInMessage, setShowSignInMessage] = useState(false);
+    const { showSignInMessage, setShowSignInMessage } = useAuthContext();
 
     useEffect(() => {
-        let timeoutId;
-
-        if (localStorage.getItem("showSignInSuccess") === "true") {
-            setShowSignInMessage(true);
-
-            timeoutId = setTimeout(() => {
+        if (showSignInMessage) {
+            const timer = setTimeout(() => {
                 setShowSignInMessage(false);
-                localStorage.removeItem("showSignInSuccess");
             }, 2000);
-        }
 
-        return () => {
-            // Cleanup the timeout on unmount
-            clearTimeout(timeoutId);
-        };
-    }, []);
+            return () => clearTimeout(timer);
+        }
+    }, [showSignInMessage, setShowSignInMessage]);
 
     return (
         <>

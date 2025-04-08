@@ -18,31 +18,35 @@ import ProtectedAdminRoute from "./components/route-guard-components/ProtectedAd
 import Details from "./pages/Details";
 import SpotPrices from "./components/general-components/SpotPrices";
 
+import { AuthContextProvider } from "./contexts/AuthContext";
+
 function App() {
   const adminUID = "9tr19YEHTaXKUJXK0DUzAqQFt642";
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/currency" element={<Currency />} />
-        <Route path="/login" element={<PublicRoute><LogIn /></PublicRoute>} />
-        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-        <Route path="/profile/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/details/:id" element={<Details/>}></Route>
-        <Route 
-          path="/admin" 
-          element={<ProtectedAdminRoute><AdminPanel /></ProtectedAdminRoute>} 
-        />
-      </Routes>
-      <SpotPrices/>
-      <Footer />
-    </Router>
+    <AuthContextProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/currency" element={<Currency />} />
+          <Route path="/login" element={<PublicRoute><LogIn /></PublicRoute>} />
+          <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+          <Route path="/profile/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/details/:id" element={<Details/>}></Route>
+          <Route 
+            path="/admin" 
+            element={<ProtectedAdminRoute><AdminPanel /></ProtectedAdminRoute>} 
+          />
+        </Routes>
+        <SpotPrices/>
+        <Footer />
+      </Router>
+    </AuthContextProvider>
   );
 }
 

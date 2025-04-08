@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../config/firebase";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function LogInForm() {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export default function LogInForm() {
     });
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { setShowSignInMessage } = useAuthContext();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,16 +24,15 @@ export default function LogInForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
-        
+
         const auth = getAuth(app);
         try {
             await signInWithEmailAndPassword(auth, formData.email, formData.password);
-           
-            localStorage.setItem("showSignInSuccess", "true");
 
+            setShowSignInMessage(true);
             navigate("/");
         } catch (error) {
-            setError(error.message);
+            setError("Invalid email or password!");
         }
     };
 
@@ -62,7 +63,7 @@ export default function LogInForm() {
                         required
                     />
                 </div>
-                {error && <p className="error-message">Invalid password or email!</p>}
+                {error && <p className="error-message">{error}</p>}
                 <div className="form-bottom-flex">
                     <div className="form-link">
                         <Link to="/register">Register</Link>
