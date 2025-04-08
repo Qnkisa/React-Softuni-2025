@@ -7,16 +7,16 @@ import Currency from "./pages/Currency";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import UserProfile from "./pages/UserProfile";
-import Navbar from './components/Navbar';
-import Footer from "./components/Footer";
+import Navbar from './components/general-components/Navbar';
+import Footer from "./components/general-components/Footer";
 import Cart from "./pages/Cart";
 import AdminPanel from "./pages/AdminPanel";
 
-import ProtectedRoute from "./components/ProtectedRoute"; 
-import PublicRoute from "./components/PublicRoute";
-import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
+import ProtectedRoute from "./components/route-guard-components/ProtectedRoute"; 
+import PublicRoute from "./components/route-guard-components/PublicRoute";
+import ProtectedAdminRoute from "./components/route-guard-components/ProtectedAdminRoute";
 import Details from "./pages/Details";
-import SpotPrices from "./components/SpotPrices";
+import SpotPrices from "./components/general-components/SpotPrices";
 
 function App() {
   const adminUID = "9tr19YEHTaXKUJXK0DUzAqQFt642";

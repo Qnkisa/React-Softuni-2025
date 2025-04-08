@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllProducts, calculateProductPrices } from "../services/productService";
-import ProductCard from "../components/ProductCard";
-import ProductFilters from "../components/ProductFilters";
+import ProductCard from "../components/products-components/ProductCard";
+import ProductFilters from "../components/products-components/ProductFilters";
 
 export default function Products() {
     const [products, setProducts] = useState([]);

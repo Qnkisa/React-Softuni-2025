@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import GoldOre from "../assets/gold-ore.png";
-import SilverOre from "../assets/silver-ore.webp";
-import PaladiumOre from "../assets/paladium-ore.png";
-import CopperOre from "../assets/copper-ore.webp";
+import GoldOre from "../../assets/gold-ore.png";
+import SilverOre from "../../assets/silver-ore.webp";
+import PaladiumOre from "../../assets/paladium-ore.png";
+import CopperOre from "../../assets/copper-ore.webp";
 
 export default function SpotPrices() {
     const api = "https://api.gold-api.com/price/";

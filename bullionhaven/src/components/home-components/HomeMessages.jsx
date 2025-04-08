@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import WebsiteSuccessMessage from "./WebsiteSuccessMessage";
+import WebsiteSuccessMessage from "../message-components/WebsiteSuccessMessage";
 
 export default function HomeMessages(){
     const [showSignInMessage, setShowSignInMessage] = useState(false);

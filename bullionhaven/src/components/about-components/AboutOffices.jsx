@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EmployeeComponent from "./EmployeeComponent";
-import officesData from "../data/officesData";
-import employeesData from "../data/employeesData";
+import officesData from "../../data/officesData";
+import employeesData from "../../data/employeesData";
 
 
 

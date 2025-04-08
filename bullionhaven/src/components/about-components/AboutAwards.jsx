@@ -1,5 +1,5 @@
 import AwardComponent from "./AwardComponent";
-import awardsData from "../data/awardsData";
+import awardsData from "../../data/awardsData";
 
 
 export default function AboutAwards(){

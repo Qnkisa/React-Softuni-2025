@@ -1,7 +1,7 @@
 import CurrencyInfoComponent from "./CurrencyInfoComponent";
 import QuestionAnswerComponent from "./QuestionAnswerComponent";
-import currencyInfoData from "../data/currencyInfoData";
-import currencyQnAData from "../data/currencyQnAData";
+import currencyInfoData from "../../data/currencyInfoData";
+import currencyQnAData from "../../data/currencyQnAData";
 
 export default function CurrencyInfo(){
     return (

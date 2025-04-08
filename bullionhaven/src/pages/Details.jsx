@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { fetchMetalPrice } from "../services/productService";
 import { auth } from "../config/firebase";
-import WebsiteSuccessMessage from "../components/WebsiteSuccessMessage";
+import WebsiteSuccessMessage from "../components/message-components/WebsiteSuccessMessage";
 
 export default function Details() {
     const { id } = useParams();

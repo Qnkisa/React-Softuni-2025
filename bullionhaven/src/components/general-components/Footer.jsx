@@ -1,12 +1,12 @@
-import PampLogo from "../assets/pamp-logo.svg";
-import PerthMintLogo from "../assets/perth-mint-logo.svg";
-import RoyalMintLogo from "../assets/royal-mint-logo.svg";
-import ValcambiLogo from "../assets/valcambi-logo.svg";
-import AustrianMintLogo from "../assets/austrian-mint.svg"
-import ArgorHeraeusLogo from "../assets/argor-heraeus-logo.svg";
-import ChinaMintLogo from "../assets/china-mint-logo.svg";
+import PampLogo from "../../assets/pamp-logo.svg";
+import PerthMintLogo from "../../assets/perth-mint-logo.svg";
+import RoyalMintLogo from "../../assets/royal-mint-logo.svg";
+import ValcambiLogo from "../../assets/valcambi-logo.svg";
+import AustrianMintLogo from "../../assets/austrian-mint.svg"
+import ArgorHeraeusLogo from "../../assets/argor-heraeus-logo.svg";
+import ChinaMintLogo from "../../assets/china-mint-logo.svg";
 
-import WebsiteLogo from "../components/WebsiteLogo";
+import WebsiteLogo from "./WebsiteLogo";
 
 export default function Footer(){
     return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth";
-import { app } from "../config/firebase";
+import { app } from "../../config/firebase";
 
 export default function ChangePassword() {
   const [user, setUser] = useState(null);

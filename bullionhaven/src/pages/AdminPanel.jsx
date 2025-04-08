@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../config/firebase";
 import { collection, addDoc, updateDoc, deleteDoc, getDocs, doc } from "firebase/firestore";
-import AdminProductDiv from "../components/AdminProductDiv";
+import AdminProductDiv from "../components/admin-components/AdminProductDiv";
 import { fetchAllProducts } from "../services/productService";
 
 export default function AdminPanel() {

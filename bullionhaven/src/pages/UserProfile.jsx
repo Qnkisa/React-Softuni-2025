@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
-import ChangePassword from "../components/ChangePassword";
-import UserOrders from "../components/UserOrders";
+import ChangePassword from "../components/user-profile-components/ChangePassword";
+import UserOrders from "../components/user-profile-components/UserOrders";
 import { app } from "../config/firebase";
-import UserProfileHeading from "../components/UserProfileHeading";
+import UserProfileHeading from "../components/user-profile-components/UserProfileHeading";
 
 export default function UserProfile() {
     const { userId } = useParams();

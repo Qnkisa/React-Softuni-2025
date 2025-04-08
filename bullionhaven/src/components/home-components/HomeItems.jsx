@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchProducts, calculateProductPrices } from "../services/productService";
-import ProductCard from "../components/ProductCard";
+import { fetchProducts, calculateProductPrices } from "../../services/productService";
+import ProductCard from "../products-components/ProductCard";
 
 export default function HomeItems() {
     const [products, setProducts] = useState([]);

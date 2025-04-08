@@ -1,7 +1,7 @@
-import HomeHeading from "../components/HomeHeading";
-import HomeItems from "../components/HomeItems";
-import HomeMessages from "../components/HomeMessages";
-import HomeTestimonials from "../components/HomeTestimonials";
+import HomeHeading from "../components/home-components/HomeHeading";
+import HomeItems from "../components/home-components/HomeItems";
+import HomeMessages from "../components/home-components/HomeMessages";
+import HomeTestimonials from "../components/home-components/HomeTestimonials";
 
 export default function Home(){
     return(

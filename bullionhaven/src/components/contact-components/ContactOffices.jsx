@@ -1,6 +1,6 @@
 import { useState } from "react";
 import OfficeDetails from "./OfficeDetails";
-import contactOfficesData from "../data/contactOfficesData";
+import contactOfficesData from "../../data/contactOfficesData";
 
 export default function ContactOffices(){
     const [selectedOffice, setSelectedOffice] = useState(contactOfficesData[0]);

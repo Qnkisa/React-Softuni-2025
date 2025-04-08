@@ -1,5 +1,5 @@
-import ContactHeading from "../components/ContactHeading";
-import ContactOffices from "../components/ContactOffices";
+import ContactHeading from "../components/contact-components/ContactHeading";
+import ContactOffices from "../components/contact-components/ContactOffices";
 
 export default function Contact(){
     return (

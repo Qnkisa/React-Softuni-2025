@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { db, auth } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import WebsiteSuccessMessage from "../components/WebsiteSuccessMessage";
+import WebsiteSuccessMessage from "../components/message-components/WebsiteSuccessMessage";
 
 export default function Cart() {
     const [cart, setCart] = useState([]);

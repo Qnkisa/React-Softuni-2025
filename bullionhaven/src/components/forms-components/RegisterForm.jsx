@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from "../config/firebase";
+import { app } from "../../config/firebase";
 
 export default function RegisterForm() {
     const [formData, setFormData] = useState({

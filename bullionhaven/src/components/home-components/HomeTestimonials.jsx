@@ -1,5 +1,5 @@
 import TestimonialElement from "./TestimonialElement";
-import testimonialsData from "../data/testimonialsData";
+import testimonialsData from "../../data/testimonialsData";
 
   
 export default function HomeTestimonials(){
