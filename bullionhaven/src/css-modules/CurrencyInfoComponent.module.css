@@ -1,0 +1,31 @@
+.currencyInfoComponent {
+    margin-bottom: 30px;
+}
+
+.currencyInfoComponent p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.currencyInfoComponent span {
+    opacity: 0.7;
+    line-height: 23px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .currencyInfoComponent {
+        margin-bottom: 20px;
+    }
+
+    .currencyInfoComponent p {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .currencyInfoComponent span {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+}

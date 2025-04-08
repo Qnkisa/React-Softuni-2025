@@ -582,33 +582,6 @@ footer{
     text-align: center;
 }
 
-.award-component-line{
-    width: 100px;
-    height: 5px;
-    display: block;
-    background-color: var(--clr-gold);
-    margin: 5px auto 20px;
-}
-
-.award-component img{
-    width: 150px;
-    height: 100px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-.award-component p{
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.award-component span{
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
 /*currencies start*/
 
 .currency-page{
@@ -691,22 +664,6 @@ footer{
 .currency-info-components{
     padding: 0 2rem;
     border-bottom: 1px solid rgb(209, 209, 209);
-}
-
-.currency-info-component{
-    margin-bottom: 30px;
-}
-
-.currency-info-component p{
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.currency-info-component span{
-    opacity: 0.7;
-    line-height: 23px;
-    font-size: 0.9rem;
 }
 
 .currency-info-questions{
@@ -1082,62 +1039,9 @@ footer{
     gap: 50px;
 }
 
-.admin-product-div{
-    background-color: black;
-    color: var(--clr-gold);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.admin-product-div-flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.admin-product-div img{
-    width: 100%;
-    border: 1px solid var(--clr-gold);
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.admin-product-div p{
-    font-size: 1.25rem;
-    margin: 15px auto 30px;
-}
-
 .item-removed-from-db{
     font-size: 1rem;
     color: rgb(209, 53, 53);
-}
-
-.admin-product-div-button{
-    padding: 10px 20px;
-    font-size: 1.25rem;
-    border-radius: 5px;
-    color: white;
-    transition: all .3s;
-    cursor: pointer;
-}
-
-.admin-product-div-edit{
-    background-color: var(--clr-gold);
-    border: 1px solid var(--clr-gold);
-}
-
-.admin-product-div-edit:hover{
-    box-shadow: 0 0 15px 3px var(--clr-gold);
-}
-
-.admin-product-div-delete{
-    background-color: rgb(209, 53, 53);
-    border: 1px solid rgb(209, 53, 53);  
-}
-
-.admin-product-div-delete:hover{
-    box-shadow: 0 0 15px 3px rgb(209, 53, 53);
 }
 
 .admin-delete-modal-helper{
@@ -1292,62 +1196,6 @@ footer{
     text-align: center;
 }
 
-.product-card {
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    position: relative;
-}
-
-.product-card img{
-    width: 100%;
-    border: 1px solid var(--clr-gold);
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.product-card p{
-    font-size: 1.25rem;
-    margin: 15px auto 30px;
-    color: var(--clr-gold);
-    font-weight: bold;
-}
-
-.product-card span{
-    color: white;
-    opacity: 0.8;
-    display: block;
-    margin-bottom: 30px;
-}
-
-.admin-product-div-button{
-    padding: 10px 20px;
-    font-size: 1.25rem;
-    border-radius: 5px;
-    color: white;
-    transition: all .3s;
-    cursor: pointer;
-}
-
-.product-card a {
-    text-decoration: none;
-    color: white;
-    background-color: var(--clr-gold);
-    padding: 15px 25px;
-    border-radius: 5px;
-    transition: all .3s;
-    margin-top: auto;
-    margin-bottom: 10px;
-}
-
-.product-card a:hover{
-    box-shadow: 0 0 15px 3px var(--clr-gold);
-}
-
 .home-testimonials{
     width: 90%;
     margin: 0 auto;
@@ -1366,40 +1214,6 @@ footer{
     gap: 50px;
     align-items: center;
     margin: 0 auto 100px;
-}
-
-.testimonial-div{
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    border-radius: 10px;
-    height: 300px;
-}
-
-.star-flex{
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.star-flex img{
-    width: 30px;
-}
-
-.tesitimonial-person-name{
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.testimonial-date{
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-bottom: 30px;
-}
-
-.testimonial-div span{
-    line-height: 24px;
 }
 
 /*product details page styling*/
@@ -2116,20 +1930,6 @@ footer{
         flex-direction: column;
     }
 
-    .currency-info-component{
-        margin-bottom: 20px;
-    }
-
-    .currency-info-component p{
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
-
-    .currency-info-component span{
-        font-size: 0.8rem;
-        line-height: 20px;
-    }
-
     .currency-info-questions{
         padding: 2rem 1rem 0rem;
     }
@@ -2176,15 +1976,6 @@ footer{
         flex-direction: column;
         gap: 30px;
         text-align: center;
-    }
-
-    .star-flex{
-        margin: 0 auto 10px;
-        justify-content: center;
-    }
-
-    .testimonial-div{
-        height: 250px;
     }
 }
 
@@ -2362,26 +2153,6 @@ footer{
         gap: 25px;
     }
 
-    .award-component img {
-        width: 100px;
-        height: 75px;
-        margin: 0 auto 10px;
-    }
-
-    .award-component-line {
-        width:50px;
-        height: 3px;
-        margin: 5px auto 10px;
-    }
-    
-    .award-component p {
-        font-size: 1rem;
-    }
-
-    .award-component span {
-        font-size: 0.8rem;
-    }
-
     /*currency page styling*/
     .currency-heading{
         font-size: 2.5rem;
@@ -2481,19 +2252,6 @@ footer{
         margin: 75px auto 25px;
     }
 
-    .admin-product-div{
-        padding: 1rem;
-    }
-
-    .admin-product-div p{
-        font-size: 1.1rem;
-        margin: 10px auto 20px;
-    }
-
-    .admin-product-div-flex{
-        margin-bottom: 20px;
-    }
-
     .admin-delete-modal p{
         font-size: 1.5rem;
     }
@@ -2527,26 +2285,9 @@ footer{
         gap: 30px;
     }
 
-    .product-card{
-        padding: 1rem;
-    }
-
-    .product-card p{
-        font-size: 1rem;
-        margin: 10px auto 20px;
-    }
-
     .home-testimonials h4{
         font-size: 1.75rem;
         margin-bottom: 25px;
-    }
-
-    .testimonial-div{
-        padding: 1rem;
-    }
-
-    .star-flex img{
-        width: 20px;
     }
 
     .testimonial-grid{

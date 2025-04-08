@@ -1,0 +1,52 @@
+.awardComponent {
+    text-align: center;
+}
+
+.awardComponentLine {
+    width: 100px;
+    height: 5px;
+    display: block;
+    background-color: var(--clr-gold);
+    margin: 5px auto 20px;
+}
+
+.awardComponentImg {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.awardName {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.awardDescription {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+    .awardComponentImg {
+        width: 100px;
+        height: 75px;
+        margin: 0 auto 10px;
+    }
+
+    .awardComponentLine {
+        width: 50px;
+        height: 3px;
+        margin: 5px auto 10px;
+    }
+
+    .awardName {
+        font-size: 1rem;
+    }
+
+    .awardDescription {
+        font-size: 0.8rem;
+    }
+}

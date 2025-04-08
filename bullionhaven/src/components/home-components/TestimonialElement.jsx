@@ -1,15 +1,18 @@
-export default function TestimonialElement({personName, testimonialDate, testimonialText}){
+import React from 'react';
+import styles from '../../css-modules/TestimonialElement.module.css';
+
+export default function TestimonialElement({ personName, testimonialDate, testimonialText }) {
     return (
-        <div className="testimonial-div">
-            <div className="star-flex">
-                <img src="/website-icons/star-icon.png" alt="" />
-                <img src="/website-icons/star-icon.png" alt="" />
-                <img src="/website-icons/star-icon.png" alt="" />
-                <img src="/website-icons/star-icon.png" alt="" />
-                <img src="/website-icons/star-icon.png" alt="" />
+        <div className={styles.testimonialDiv}>
+            <div className={styles.starFlex}>
+                <img src="/website-icons/star-icon.png" alt="star" />
+                <img src="/website-icons/star-icon.png" alt="star" />
+                <img src="/website-icons/star-icon.png" alt="star" />
+                <img src="/website-icons/star-icon.png" alt="star" />
+                <img src="/website-icons/star-icon.png" alt="star" />
             </div>
-            <p className="tesitimonial-person-name">{personName}</p>
-            <p className="testimonial-date">{testimonialDate}</p>
+            <p className={styles.testimonialPersonName}>{personName}</p>
+            <p className={styles.testimonialDate}>{testimonialDate}</p>
             <span>{testimonialText}</span>
         </div>
     );

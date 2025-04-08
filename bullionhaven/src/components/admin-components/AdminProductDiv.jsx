@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import styles from '../../css-modules/AdminProductDiv.module.css';
 
 export default function AdminProductDiv({ product, handleEdit, setDeleteId }) {
     const [isDeleted, setIsDeleted] = useState(false);
@@ -9,12 +10,12 @@ export default function AdminProductDiv({ product, handleEdit, setDeleteId }) {
     };
 
     return (
-        <div className="admin-product-div">
-            <img src={`/product-photos/${product.imageUrl}`} alt={product.name} />
-            <p>{product.name}</p>
-            <div className="admin-product-div-flex">
-                <button className="admin-product-div-button admin-product-div-edit" onClick={() => handleEdit(product)}>Edit</button>
-                <button className="admin-product-div-button admin-product-div-delete" onClick={handleDelete}>Delete</button>
+        <div className={styles.adminProductDiv}>
+            <img src={`/product-photos/${product.imageUrl}`} alt={product.name} className={styles.adminProductDivImg} />
+            <p className={styles.adminProductDivP}>{product.name}</p>
+            <div className={styles.adminProductDivFlex}>
+                <button className={`${styles.adminProductDivButton} ${styles.adminProductDivEdit}`} onClick={() => handleEdit(product)}>Edit</button>
+                <button className={`${styles.adminProductDivButton} ${styles.adminProductDivDelete}`} onClick={handleDelete}>Delete</button>
             </div>
         </div>
     );

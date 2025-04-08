@@ -1,0 +1,67 @@
+.adminProductDiv {
+    background-color: black;
+    color: var(--clr-gold);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.adminProductDivFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.adminProductDivImg {
+    width: 100%;
+    border: 1px solid var(--clr-gold);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.adminProductDivP {
+    font-size: 1.25rem;
+    margin: 15px auto 30px;
+}
+
+.adminProductDivButton {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    color: white;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.adminProductDivEdit {
+    background-color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+}
+
+.adminProductDivEdit:hover {
+    box-shadow: 0 0 15px 3px var(--clr-gold);
+}
+
+.adminProductDivDelete {
+    background-color: rgb(209, 53, 53);
+    border: 1px solid rgb(209, 53, 53);
+}
+
+.adminProductDivDelete:hover {
+    box-shadow: 0 0 15px 3px rgb(209, 53, 53);
+}
+
+@media (max-width: 500px) {
+    .adminProductDiv {
+        padding: 1rem;
+    }
+
+    .adminProductDivP {
+        font-size: 1.1rem;
+        margin: 10px auto 20px;
+    }
+
+    .adminProductDivFlex {
+        margin-bottom: 20px;
+    }
+}
